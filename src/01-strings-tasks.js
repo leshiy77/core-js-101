@@ -227,9 +227,9 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  const alphabet = ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz').split('');
-  const rot13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
-  return str.split('').map((elem) => rot13[alphabet.findIndex(elem)]).join('');
+  const alphabet = ('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ?!').split('');
+  const rot13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm ?!';
+  return str.split('').map((elem) => rot13[alphabet.findIndex((item) => item === elem)]).join('');
 }
 /**
  * Returns true if the value is string; otherwise false.
@@ -287,7 +287,7 @@ function getCardId(value) {
     'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
     'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠',
   ];
-  return deck.findIndex(value);
+  return deck.findIndex((item) => item === value);
 }
 
 
